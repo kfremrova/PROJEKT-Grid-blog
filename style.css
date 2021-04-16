@@ -85,12 +85,14 @@ blockquote {
 	grid-column: 1 / 2;	
 	align-self: start;	/*aby se box neroztahoval přes celou výšku gridu, ale byl jen tam, kde je text*/
 	text-align: right;
+	border-right: var(--zluta) 2px solid;
 }
 
 .tip-vpravo {
 	grid-column: -2 / -1;
 	align-self: start; /*viz výše*/
 	text-align: left;
+	border-left: var(--zluta) 2px solid;
 }
 
 /*nadpisy a text jsou v prostředním sloupci*/
@@ -111,15 +113,18 @@ h2 {
 
 h1 {
 	font-size: 64px;
+	margin: 1em 0;
 }
 
 h2 {
 	font-size: 54px;
+	margin: 0.5em 0;
 }
 
 blockquote {
 	font-size: 32px;
 	margin: 0;
+	margin: 0.5em 0;
 }
 
 .meta,
@@ -145,10 +150,12 @@ footer {
 	color: var(--cervena);
 }
 
+/*aby mi obrázek z tipů zbytečně neroztahoval grid*/
 img {
 	width: 100%;
 }
 
+/*zarovnání obrázků od kraje ke kraji*/
 figure {
 	margin-left: 0;
 	margin-right: 0;
@@ -156,6 +163,17 @@ figure {
 
 p {
 	margin-top: 0;
+}
+
+/*Luďkovy "magické čárky" okolo citací*/
+blockquote::before,
+blockquote::after {
+	content: "";
+	display: block;
+	background-color: var(--limetka);
+	width: 100px;
+	height: 2px;
+	margin: 20px auto;
 }
 
 
