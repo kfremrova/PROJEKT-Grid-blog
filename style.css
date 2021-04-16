@@ -66,3 +66,97 @@ blockquote {
 	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
 */
 
+/*základní mřížka*/
+.blog {
+	display: grid;
+	grid-template-columns: 1fr 4fr 2fr;
+	column-gap: 40px;
+}
+
+/*obrázky a citáty jsou přes celou šířku stránky*/
+figure,
+blockquote {
+	grid-column: 1 / -1;
+	justify-self: center;
+}
+
+/*tipy jsou v levém nebo pravém sloupci*/
+.tip-vlevo {
+	grid-column: 1 / 2;	
+	align-self: start;	/*aby se box neroztahoval přes celou výšku gridu, ale byl jen tam, kde je text*/
+	text-align: right;
+}
+
+.tip-vpravo {
+	grid-column: -2 / -1;
+	align-self: start; /*viz výše*/
+	text-align: left;
+}
+
+/*nadpisy a text jsou v prostředním sloupci*/
+
+header,
+h2,
+p,
+footer {
+	grid-column: 2 / 3;
+}
+
+/*následuje stylování pro koukatelnost*/
+/*nejprve barvy a cca nastavení velikosti písma a pozadí*/
+h1,
+h2 {
+	color: var(--zelena);
+}
+
+h1 {
+	font-size: 64px;
+}
+
+h2 {
+	font-size: 54px;
+}
+
+blockquote {
+	font-size: 32px;
+	margin: 0;
+}
+
+.meta,
+blockquote,
+figcaption,
+footer,
+a {
+	color: var(--seda);
+}
+
+footer {
+	font-size: 16px;
+}
+
+.tip {
+	font-size: 16px;
+	background-color: var(--svetla);
+	color: var(--tmava);
+	padding: 15px;
+}
+
+.tip a {
+	color: var(--cervena);
+}
+
+img {
+	width: 100%;
+}
+
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+p {
+	margin-top: 0;
+}
+
+
+
